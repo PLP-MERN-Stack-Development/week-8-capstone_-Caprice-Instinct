@@ -1,52 +1,117 @@
-# MERN Stack Capstone Project
+# Book Exchange Web Application
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+A MERN stack application that allows users to share and exchange books with others in their community.
 
-## Assignment Overview
+## Features
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+- User authentication and profile management
+- Book listing and management
+- Book exchange requests and messaging
+- Real-time chat using Socket.io
+- Responsive design with React Bootstrap
 
-## Getting Started
+## Tech Stack
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+- **Frontend**: React, Redux, React Router, React Bootstrap, Socket.io Client
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose, Socket.io
+- **Authentication**: JWT (JSON Web Tokens)
+- **Testing**: Jest, Supertest
 
-## Files Included
+## Installation
 
-- `Week8-Assignment.md`: Detailed assignment instructions
-
-## Requirements
+### Prerequisites
 
 - Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
+- MongoDB (local installation or MongoDB Atlas account)
 - npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
 
-## Project Ideas
+### Setup
 
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
+1. Clone the repository
+```
+git clone <repository-url>
+cd book-exchange
+```
 
-## Submission
+2. Install backend dependencies
+```
+cd backend
+npm install
+```
 
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+3. Install frontend dependencies
+```
+cd ../frontend
+npm install
+```
 
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
+4. Create a .env file in the backend directory with the following variables:
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/book-exchange
+JWT_SECRET=your_jwt_secret_key
+NODE_ENV=development
+```
 
-## Resources
+### Running the Application
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+1. Start the backend server
+```
+cd backend
+npm run dev
+```
+
+2. Start the frontend development server
+```
+cd frontend
+npm start
+```
+
+3. Open your browser and navigate to `http://localhost:3000`
+
+## API Endpoints
+
+### Users
+- `POST /api/users` - Register a new user
+- `POST /api/users/login` - Authenticate user
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update user profile
+
+### Books
+- `GET /api/books` - Get all available books
+- `GET /api/books/:id` - Get a specific book
+- `POST /api/books` - Create a new book
+- `PUT /api/books/:id` - Update a book
+- `DELETE /api/books/:id` - Delete a book
+- `GET /api/books/mybooks` - Get user's books
+
+### Exchanges
+- `POST /api/exchanges` - Create an exchange request
+- `GET /api/exchanges` - Get user's exchanges
+- `GET /api/exchanges/:id` - Get a specific exchange
+- `PUT /api/exchanges/:id` - Update exchange status
+- `POST /api/exchanges/:id/messages` - Add a message to an exchange
+
+## Testing
+
+Run tests with:
+```
+cd backend
+npm test
+```
+
+## Deployment
+
+The application can be deployed to platforms like Heroku, Vercel, or Netlify. Detailed deployment instructions will be added soon.
+
+## Screenshots
+
+(Screenshots will be added here)
+
+## Video Demonstration
+
+(Link to video demonstration will be added here)
+
+## License
+
+This project is licensed under the MIT License.
